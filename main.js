@@ -45,11 +45,46 @@ $(document).ready(function () {
 .navigation-wrapper.visible {
   display: block; /* Makes the menu visible when the 'visible' class is added */
   opacity: 1;     /* Fade in the menu */
-}
-
-/* Optional: Animation for mobile menu */
-.navigation-wrapper.visible {
   transform: translateY(0); /* Optional sliding effect */
-  transition: transform 0.3s ease-in-out; /* Sliding effect duration */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Smooth transition for sliding and fading */
 }
 
+/* Initially, hide the hamburger icon */
+.btn-mobile-menu__icon.icon-list {
+  display: block; /* Show the hamburger icon */
+  opacity: 1;
+  transition: opacity 0.3s ease; /* Smooth fade in transition */
+}
+
+/* Initially, hide the close (X) icon */
+.btn-mobile-menu__icon.icon-x-circle {
+  display: none;  /* Hide close icon initially */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth fade in transition */
+}
+
+/* When the close icon is active (menu open), show it and hide the hamburger */
+.btn-mobile-menu__icon.icon-list {
+  display: none;  /* Hide hamburger icon when menu is open */
+  opacity: 0;
+}
+
+.btn-mobile-menu__icon.icon-x-circle {
+  display: block;  /* Show the close icon */
+  opacity: 1;      /* Make it visible */
+  transition: opacity 0.3s ease; /* Smooth transition for fade in/out */
+}
+
+/* Optional: You can add more custom styles for menu items or other animations if needed */
+
+/* Style for when the panel is collapsed (useful if you're controlling the overall page layout) */
+.panel-cover--collapsed {
+  max-width: 0 !important;
+  opacity: 0;
+  transition: opacity 0.3s ease, max-width 0.3s ease;
+}
+
+/* Ensure that the animated classes are appropriately handled by the animation library (like Animate.css) */
+.animated {
+  animation-duration: 0.3s; /* Ensure the animations don't last too long */
+}
