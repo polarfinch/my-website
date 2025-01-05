@@ -1,3 +1,5 @@
+---
+---
 @import "uno";
 @import "tables";
 @import "monokai";
@@ -113,6 +115,8 @@ pre.highlight code,
   display: none !important;  /* Hide <img> tags completely */
 }
 
+
+
 /* Optional: Add more specific handling for the icon-email if needed */
 .icon-email {
   background-size: contain !important;  /* Force correct image sizing */
@@ -127,6 +131,8 @@ body {
   background-position: center center;
   background-attachment: fixed; /* Optional, makes the background fixed */
 }
+
+
 
 .pagination__page-number {
   display: inline-block;
@@ -164,95 +170,14 @@ body {
   border-radius:100%;
 }
 
+
+
 body {
   background-image: url('/images/background.jpg');
-  background-size: cover;
+ background-size: cover;
   background-position: center center;
   background-attachment: fixed; /* Optional, makes the background fixed */
 }
 
 
-/* MOBILE MENU STYLES */
 
-/* Hide mobile menu by default */
-.navigation-wrapper {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease, display 0.3s ease;
-}
-
-/* When the menu is visible */
-.navigation-wrapper.visible {
-  display: block;
-  opacity: 1;
-}
-
-/* Burger icon button styles */
-.btn-mobile-menu {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background: none;
-  border: none;
-  position: relative;
-}
-
-/* Show the burger icon by default */
-.btn-mobile-menu__icon {
-  font-size: 24px;
-  transition: opacity 0.3s ease;
-}
-
-/* Initially hide the close (X) icon */
-.btn-mobile-close__icon {
-  display: none;
-  font-size: 24px;
-}
-
-/* When the menu is visible, show the close icon and hide the burger icon */
-.navigation-wrapper.visible .btn-mobile-menu__icon.icon-list {
-  display: none;
-}
-
-.navigation-wrapper.visible .btn-mobile-close__icon {
-  display: block;
-}
-
-/* Social icons positioning */
-.cover-navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cover-navigation--primary {
-  display: none; /* Initially hide the main navigation */
-}
-
-.cover-navigation--social {
-  display: flex;
-  flex-direction: row;  /* Arrange social links horizontally */
-  justify-content: space-evenly;
-  margin-top: 20px;
-  width: 100%;  /* Ensure the social links take up full width */
-}
-
-.cover-navigation--social .navigation__item {
-  margin: 10px;
-}
-
-/* Additional styling for smaller screens (if needed) */
-@media (max-width: 768px) {
-  .cover-navigation--social {
-    flex-direction: row;  /* Ensure social links are displayed horizontally */
-    justify-content: space-evenly;
-  }
-
-  .navigation__item a {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-}
