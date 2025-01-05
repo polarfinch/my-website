@@ -1,3 +1,6 @@
+CSS
+
+
 ---
 ---
 @import "uno";
@@ -124,47 +127,6 @@ pre.highlight code,
   background-repeat: no-repeat !important;  /* Prevent tiling */
 }
 
-/* Ensure cover-navigation is visible on mobile */
-.cover-navigation {
-  display: flex;
-  flex-direction: row; /* Arrange links horizontally */
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px; /* Add some spacing above the links */
-}
-
-/* Social Icons and Links Style */
-.cover-navigation .navigation__item {
-  margin: 10px;
-  text-align: center;
-}
-
-.cover-navigation .navigation__item a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.cover-navigation .navigation__item a:hover {
-  color: #f39c12; /* Hover effect for links */
-}
-
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-  .cover-navigation {
-    flex-direction: column; /* Stack social links vertically on smaller screens */
-    align-items: center;
-  }
-
-  .cover-navigation .navigation__item a {
-    font-size: 14px; /* Adjust font size on mobile */
-    padding: 10px;
-  }
-}
-
-
-
 /* Body background */
 body {
   background-image: url('/images/background.jpg'); /* Ensure this path is correct */
@@ -219,4 +181,7 @@ body {
   background-position: center center;
   background-attachment: fixed; /* Optional, makes the background fixed */
 }
+
+
+
 
