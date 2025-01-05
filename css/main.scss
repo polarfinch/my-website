@@ -305,6 +305,60 @@ html, body {
   z-index: 5;
 }
 
+/* Mobile Menu Button */
+.btn-mobile-menu {
+  cursor: pointer; /* Make it clickable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: none;
+  border: none;
+  position: relative;
+}
+
+/* Mobile Menu Icon */
+.btn-mobile-menu__icon {
+  font-size: 24px;
+  transition: opacity 0.3s ease; /* Smooth transition for the icon */
+}
+
+.btn-mobile-menu__icon.icon-x-circle {
+  display: none; /* Initially hide the close (X) icon */
+}
+
+/* When Menu is Visible */
+.navigation-wrapper.visible + .panel-cover--overlay {
+  display: block;
+  opacity: 1;
+}
+
+/* When the Menu is Visible, Hide Hamburger Icon and Show Close (X) Icon */
+.navigation-wrapper.visible .btn-mobile-menu__icon.icon-list {
+  display: none; /* Hide hamburger icon when menu is visible */
+}
+
+.navigation-wrapper.visible .btn-mobile-menu__icon.icon-x-circle {
+  display: block; /* Show close (X) icon when menu is visible */
+  font-size: 24px;
+}
+
+/* Mobile Navigation Wrapper (Hidden by default) */
+.navigation-wrapper {
+  max-height: 0; /* Start with zero height */
+  overflow: hidden; /* Hide content when collapsed */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth opacity and height transition */
+  display: flex;
+  flex-direction: column;
+}
+
+/* When the Menu is Visible */
+.navigation-wrapper.visible {
+  max-height: 500px; /* Set a large value for when the menu is visible */
+  opacity: 1; /* Make it visible */
+}
+
 
 body {
   background-image: url('/images/background.jpg');
