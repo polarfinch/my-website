@@ -33,8 +33,6 @@ $(document).ready(function () {
 });
 
 
-})
-
 /* Initially, hide the navigation wrapper */
 .navigation-wrapper {
   display: none;  /* This hides the menu initially */
