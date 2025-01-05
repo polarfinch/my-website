@@ -36,6 +36,16 @@ exclude: 'yes'
       $('.navigation-wrapper').toggleClass('visible')
       $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
     })
+    // When the hamburger button is clicked
+$('.btn-mobile-menu').click(function() {
+  // Toggle the visibility of the navigation menu
+  $('.navigation-wrapper').toggleClass('visible');
+  
+  // Toggle between burger and close (X) icons
+  $('.btn-mobile-menu__icon.icon-list').toggleClass('hidden');
+  $('.btn-mobile-close__icon').toggleClass('hidden');
+});
+
 
   })
 
