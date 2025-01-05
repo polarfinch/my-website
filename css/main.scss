@@ -124,6 +124,43 @@ pre.highlight code,
   background-repeat: no-repeat !important;  /* Prevent tiling */
 }
 
+/* Mobile Social Icons - Always visible */
+@media only screen and (max-width: 768px) {
+  .cover-navigation {
+    display: flex;
+    flex-direction: row;  /* Display the social links in a row */
+    justify-content: space-between;  /* Space out the icons */
+    padding: 20px;
+    background-color: #333;
+  }
+
+  .cover-navigation .navigation__item {
+    margin: 0 10px;  /* Space out the social links */
+  }
+
+  .cover-navigation .navigation__item a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .cover-navigation .navigation__item a:hover {
+    color: #f39c12; /* Hover effect for social links */
+  }
+
+  /* Hide the burger menu icon */
+  .btn-mobile-menu {
+    display: none;  /* Remove the hamburger menu icon */
+  }
+
+  /* Show all social icons directly on mobile */
+  .navigation-wrapper {
+    display: none; /* Ensure the mobile menu does not show */
+  }
+}
+
+
 /* Body background */
 body {
   background-image: url('/images/background.jpg'); /* Ensure this path is correct */
