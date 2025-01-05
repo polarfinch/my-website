@@ -34,4 +34,22 @@ $(document).ready(function () {
 
 })
 
+/* Initially, hide the navigation wrapper */
+.navigation-wrapper {
+  display: none;  /* This hides the menu initially */
+  opacity: 0;     /* Start with the menu invisible */
+  transition: opacity 0.3s ease; /* Smooth transition for fading in */
+}
+
+/* Show the navigation wrapper when the 'visible' class is added */
+.navigation-wrapper.visible {
+  display: block; /* Makes the menu visible when the 'visible' class is added */
+  opacity: 1;     /* Fade in the menu */
+}
+
+/* Optional: Animation for mobile menu */
+.navigation-wrapper.visible {
+  transform: translateY(0); /* Optional sliding effect */
+  transition: transform 0.3s ease-in-out; /* Sliding effect duration */
+}
 
