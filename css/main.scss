@@ -170,6 +170,142 @@ body {
   border-radius:100%;
 }
 
+/* Ensure the body and html have full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Mobile Menu Button */
+.btn-mobile-menu {
+  cursor: pointer; /* Make it clickable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: none;
+  border: none;
+  position: relative;
+}
+
+/* Mobile Menu Icon */
+.btn-mobile-menu__icon {
+  font-size: 24px;
+  transition: opacity 0.3s ease; /* Smooth transition for the icon */
+}
+
+.btn-mobile-menu__icon.icon-x-circle {
+  display: none; /* Initially hide the close (X) icon */
+}
+
+/* Mobile Navigation Wrapper (Hidden by default) */
+.navigation-wrapper {
+  max-height: 0; /* Start with zero height */
+  overflow: hidden; /* Hide content when collapsed */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth opacity and height transition */
+  display: flex;
+  flex-direction: column;
+}
+
+/* When the Menu is Visible */
+.navigation-wrapper.visible {
+  max-height: 500px; /* Set a large value for when the menu is visible */
+  opacity: 1; /* Make it visible */
+}
+
+/* Mobile Navigation Menu */
+.cover-navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.cover-navigation .navigation__item {
+  margin: 10px 0;
+}
+
+.cover-navigation .navigation__item a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.cover-navigation .navigation__item a:hover {
+  color: #f39c12; /* Hover effect for links */
+}
+
+/* Social Icons - Example */
+.cover-navigation .navigation__item i {
+  margin-right: 8px;
+}
+
+/* Close Button Icon Visibility */
+.btn-mobile-menu__icon.icon-list {
+  display: block; /* Show the hamburger icon initially */
+}
+
+.btn-mobile-menu__icon.icon-x-circle {
+  display: none; /* Hide the close icon initially */
+}
+
+/* When the Menu is Visible, Show Close (X) Icon */
+.navigation-wrapper.visible .btn-mobile-menu__icon.icon-list {
+  display: none; /* Hide hamburger icon when menu is visible */
+}
+
+.navigation-wrapper.visible .btn-mobile-menu__icon.icon-x-circle {
+  display: block; /* Show close (X) icon when menu is visible */
+  font-size: 24px;
+}
+
+/* Optional: Adding a smooth background overlay for the menu */
+.panel-cover--overlay {
+  display: none; /* Hidden by default */
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show the overlay when menu is visible */
+.navigation-wrapper.visible + .panel-cover--overlay {
+  display: block;
+  opacity: 1;
+}
+
+/* Make sure to use flexbox for the header content */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+}
+
+.header img {
+  height: 40px;
+  width: auto;
+}
+
+/* Optional: Mobile menu background and animation */
+.panel-cover {
+  position: relative;
+}
+
+.panel-cover--overlay {
+  z-index: 5;
+}
 
 
 body {
