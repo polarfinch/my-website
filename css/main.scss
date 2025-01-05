@@ -32,37 +32,26 @@ pre.highlight code,
   vertical-align: middle;
   overflow: hidden;
 }
-/* Burger menu styles */
-.navigation-wrapper {
-  display: none;  /* Hide the menu on small screens */
-  opacity: 0;
-  transition: opacity 0.3s ease, display 0.3s ease;
-}
-/* Initially hide the navigation menu on mobile */
-.navigation-wrapper {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease, display 0.3s ease;
-}
-
-/* Make sure the social links are always visible on mobile */
-.navigation--social {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-/* For mobile screens, make sure the social links are visible */
+/* Hide burger menu on mobile */
 @media (max-width: 768px) {
+  .btn-mobile-menu {
+    display: none;  /* Hide the burger menu on mobile */
+  }
+
+  .navigation-wrapper {
+    display: none !important;  /* Ensure the mobile navigation is hidden */
+  }
+
+  /* Make sure the social links are visible */
   .navigation--social {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
-  /* Optional: Adjust icons size or layout on small screens */
+
+  /* Adjust size of social icons on mobile */
   .navigation__item a {
     font-size: 14px;
   }
