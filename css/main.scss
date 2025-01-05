@@ -168,13 +168,7 @@ pre.highlight code,
   background-repeat: no-repeat !important;  /* Prevent tiling */
 }
 
-/* Body background */
-body {
-  background-image: url('/images/background.jpg'); /* Ensure this path is correct */
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed; /* Optional, makes the background fixed */
-}
+
 
 /* Pagination and tag styles */
 .pagination__page-number {
