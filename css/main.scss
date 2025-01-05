@@ -31,6 +31,40 @@ pre.highlight code,
   vertical-align: middle;
   overflow: hidden;
 }
+/* Initially hide the navigation menu on mobile */
+.navigation-wrapper {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0.3s ease;
+}
+
+/* When the menu is visible */
+.navigation-wrapper.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Burger and Close Icon Styles */
+.btn-mobile-menu__icon,
+.btn-mobile-close__icon {
+  font-size: 30px; /* Adjust size */
+  cursor: pointer;
+}
+
+/* Hide the close icon initially */
+.btn-mobile-close__icon {
+  display: none;
+}
+
+/* Show the close icon when the menu is visible */
+.navigation-wrapper.visible .btn-mobile-close__icon {
+  display: inline-block;
+}
+
+/* Change burger icon visibility when the menu is visible */
+.navigation-wrapper.visible .btn-mobile-menu__icon {
+  display: none;
+}
 
 /* Apply background images and size them correctly */
 
