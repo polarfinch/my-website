@@ -1,6 +1,3 @@
-CSS
-
-
 ---
 ---
 @import "uno";
@@ -127,51 +124,6 @@ pre.highlight code,
   background-repeat: no-repeat !important;  /* Prevent tiling */
 }
 
-/* Ensure the social links are displayed in a row */
-.cover-navigation {
-  display: flex;
-  flex-direction: row;  /* Arrange the links horizontally */
-  justify-content: center; /* Center the links horizontally */
-  flex-wrap: wrap; /* Allow wrapping if the screen is narrow */
-  margin-top: 20px; /* Optional: add some space above the icons */
-}
-
-/* Social Links Styling */
-.cover-navigation .navigation__item {
-  margin: 10px;
-  text-align: center;
-}
-
-/* Link Styling */
-.cover-navigation .navigation__item a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-/* Hover Effect for Links */
-.cover-navigation .navigation__item a:hover {
-  color: #f39c12; /* Highlight color on hover */
-}
-
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-  .cover-navigation {
-    flex-direction: row; /* Ensure horizontal layout on mobile */
-    justify-content: center; /* Center the icons */
-  }
-
-  .cover-navigation .navigation__item {
-    margin: 10px;
-  }
-
-  .cover-navigation .navigation__item a {
-    font-size: 16px; /* Adjust font size */
-    padding: 8px;  /* Add padding around icons */
-  }
-}
-
 /* Body background */
 body {
   background-image: url('/images/background.jpg'); /* Ensure this path is correct */
@@ -226,7 +178,6 @@ body {
   background-position: center center;
   background-attachment: fixed; /* Optional, makes the background fixed */
 }
-
 
 
 
