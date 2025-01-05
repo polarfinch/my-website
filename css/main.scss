@@ -15,49 +15,6 @@ pre.highlight code,
 .highlight pre code {
   white-space: pre-wrap;
 }
-/* Initially hide the navigation wrapper on mobile */
-.navigation-wrapper {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease, display 0.3s ease;
-}
-
-/* When the menu is visible, show it */
-.navigation-wrapper.visible {
-  display: block;
-  opacity: 1;
-}
-
-/* Mobile menu toggle styles */
-.btn-mobile-menu__icon,
-.btn-mobile-close__icon {
-  font-size: 30px;
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .navigation-wrapper {
-    display: block !important;  /* Show the menu on desktop */
-  }
-
-  .btn-mobile-menu {
-    display: none;  /* Hide the burger menu on desktop */
-  }
-}
-
-.btn-mobile-close__icon {
-  display: none;
-}
-
-/* Show close icon when menu is visible */
-.navigation-wrapper.visible .btn-mobile-close__icon {
-  display: inline-block;
-}
-
-/* Hide burger icon when menu is visible */
-.navigation-wrapper.visible .btn-mobile-menu__icon {
-  display: none;
-}
 
 
 /* Ensure the container is a perfect circle */
