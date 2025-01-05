@@ -27,10 +27,7 @@ $(document).ready(function () {
     $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
   })
 
-  $('.btn-mobile-menu').click(function () {
-  $('.navigation-wrapper').toggleClass('visible');  // Toggle visibility
-  $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle');  // Switch between icons
-});
+ 
 
 
 /* Initially, hide the navigation wrapper */
