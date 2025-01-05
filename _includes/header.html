@@ -1,60 +1,136 @@
-<header class="panel-cover {% if site.disable_landing_page %}panel-cover--collapsed{% endif %}">
+<span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon"></i> <!-- Removed 'hidden' -->
+</span>
+
+<header class="panel-cover {% if site.disable_landing_page %}panel-cover--collapsed{% endif %}"
+  style="background-image: url({{ site.baseurl }}/images/cover.jpg)">
   <div class="panel-main">
+
     <div class="panel-main__inner panel-inverted">
       <div class="panel-main__content">
         <a href="{{ site.baseurl }}/" title="link to home of {{ site.title }}">
-          <img src="{{ site.baseurl }}/images/profile.jpg" class="user-image" alt="My Profile Photo">
+         <img src="{{ site.baseurl }}/images/profile.jpg" class="user-image" alt="My Profile Photo">
           <h1 class="panel-cover__title panel-title">{{ site.title }}</h1>
         </a>
         <hr class="panel-cover__divider">
         <p class="panel-cover__description">{{ site.description }}</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
 
-        <!-- Social Links Directly Visible on Mobile -->
-        <div class="cover-navigation">
-          <nav class="cover-navigation--primary">
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              {% if site.author.twitter_username %}
-                <li class="navigation__item">
-                  <a href="http://twitter.com/{{ site.author.twitter_username }}" target="_blank">
-                    <i class="icon icon-social-twitter"></i>
-                    <span class="label">Twitter</span>
-                  </a>
-                </li>
-              {% endif %}
               
-              <li class="navigation__item">
-                <a href="https://open.spotify.com/artist/6kR7TOgSftpLyonF2iISxm?si=Gz7Sj84qStGMBz9zRlViPA" target="_blank">
-                  <div class="icon-spotify"></div>
-                  <span class="label">Spotify</span>
-                </a>
-              </li>
-
-              <li class="navigation__item">
-                <a href="https://music.apple.com/id/artist/polar-finch/1767238675" target="_blank">
-                  <div class="icon-apple-music"></div>
-                  <span class="label">Apple Music</span>
-                </a>
-              </li>
-
-              <li class="navigation__item">
-                <a href="https://polarfinch.bandcamp.com/" target="_blank">
-                  <div class="icon-bandcamp"></div>
-                  <span class="label">Bandcamp</span>
-                </a>
-              </li>
-
-              {% if site.author.instagram_username %}
-                <li class="navigation__item">
-                  <a href="https://www.instagram.com/{{ site.author.instagram_username }}" target="_blank">
-                    <div class="icon-instagram"></div>
-                    <span class="label">Instagram</span>
-                  </a>
-                </li>
-              {% endif %}
             </ul>
           </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+              {% if site.author.twitter_username %}
+              <!-- Twitter -->
+              <li class="navigation__item">
+                <a href="http://twitter.com/{{ site.author.twitter_username }}"
+                  title="@{{ site.author.twitter_username }} on Twitter" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+              {% endif %}
+
+              <!-- Spotify -->
+              <li class="navigation__item">
+                <a href="https://open.spotify.com/artist/6kR7TOgSftpLyonF2iISxm?si=Gz7Sj84qStGMBz9zRlViPA"
+                  title="Spotify" target="_blank">
+                 <div class="icon-spotify"></div> <!-- Div for background image -->
+                 <span class="label">Spotify</span>
+                </a>
+              </li>
+
+              <!-- Apple Music -->
+              <li class="navigation__item">
+                <a href="https://music.apple.com/id/artist/polar-finch/1767238675" title="Apple Music" target="_blank">
+                <div class="icon-apple-music"></div> <!-- New icon class for Apple Music -->
+                <span class="label">Apple Music</span>
+               </a>
+              </li>
+
+
+              <!-- Bandcamp -->
+              <li class="navigation__item">
+                <a href="https://polarfinch.bandcamp.com/" 
+                   title="Visit my Bandcamp page" 
+                   target="_blank">
+                   <div class="icon-bandcamp"></div> <!-- Div for background image -->
+                   <span class="label">Bandcamp</span>
+                </a>
+             </li>
+             
+              {% if site.author.instagram_username %}
+              <!-- Instagram -->
+              <li class="navigation__item">
+                <a href="https://www.instagram.com/{{ site.author.instagram_username }}"
+                   title="{{ site.author.instagram_username }} on Instagram" target="_blank">
+                  <div class="icon-instagram"></div> <!-- Div for background image -->
+                   <span class="label">Instagram</span>
+              </a>
+            </li>
+              {% endif %}
+
+              
+              {% if site.author.facebook_username %}
+              <!-- Facebook -->
+              <li class="navigation__item">
+               <a href="http://fb.me/{{ site.author.facebook_username }}"
+                title="{{ site.author.facebook_username }} on Facebook" target="_blank">
+                <div class="icon-facebook"></div> <!-- Div for background image -->
+                <span class="label">Facebook</span>
+               </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.linkedin_username %}
+              <!-- LinkedIn -->
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}"
+                  title="{{ site.author.linkedin_username }} on LinkedIn" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.github_username %}
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/{{ site.author.github_username }}"
+                  title="{{ site.author.github_username }} on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.email %}
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" target="_blank">
+                <div class="icon-email"></div> <!-- Div for background image -->
+                <span class="label">Email</span>
+               </a>
+              </li>
+              {% endif %}
+              
+            </ul>
+          </nav>
+
         </div>
+
       </div>
+
     </div>
+
+    <div class="panel-cover--overlay"></div>
   </div>
 </header>
