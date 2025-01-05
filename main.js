@@ -22,16 +22,20 @@ $(document).ready(function () {
   }
   {% endif %}
 
-  // Toggle menu visibility when burger icon is clicked
+  // Toggle menu visibility when burger icon is clicked (only on mobile)
   $('.btn-mobile-menu').click(function () {
-    $('.navigation-wrapper').toggleClass('visible animated bounceInDown'); // Show/hide the menu
-    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn'); // Toggle burger and close icon
+    if ($(window).width() < 768) { // Only toggle for mobile (less than 768px)
+      $('.navigation-wrapper').toggleClass('visible animated bounceInDown'); // Show/hide the menu
+      $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn'); // Toggle burger and close icon
+    }
   });
 
   // Optional: Toggle visibility when clicking on the close (X) icon
   $('.btn-mobile-close__icon').click(function () {
-    $('.navigation-wrapper').toggleClass('visible animated bounceInDown'); // Hide the menu
-    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn'); // Show the burger icon again
+    if ($(window).width() < 768) { // Only toggle for mobile (less than 768px)
+      $('.navigation-wrapper').toggleClass('visible animated bounceInDown'); // Hide the menu
+      $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn'); // Show the burger icon again
+    }
   });
-});
 
+});
