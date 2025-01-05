@@ -31,6 +31,7 @@ pre.highlight code,
   vertical-align: middle;
   overflow: hidden;
 }
+
 /* Initially hide the navigation menu on mobile */
 .navigation-wrapper {
   display: none;
@@ -50,16 +51,17 @@ pre.highlight code,
   font-size: 30px; /* Adjust size */
   cursor: pointer;
 }
+
 @media (min-width: 768px) {
   .navigation-wrapper {
-    display: block !important;  /* Make sure the menu is visible on larger screens */
+    display: block !important;  /* Ensure the menu is visible on larger screens */
+    opacity: 1 !important;  /* Ensure the menu is fully visible */
   }
 
   .btn-mobile-menu {
     display: none;  /* Hide the burger menu on desktop */
   }
 }
-
 
 /* Hide the close icon initially */
 .btn-mobile-close__icon {
@@ -159,8 +161,6 @@ pre.highlight code,
   display: none !important;  /* Hide <img> tags completely */
 }
 
-
-
 /* Optional: Add more specific handling for the icon-email if needed */
 .icon-email {
   background-size: contain !important;  /* Force correct image sizing */
@@ -176,8 +176,7 @@ body {
   background-attachment: fixed; /* Optional, makes the background fixed */
 }
 
-
-
+/* Pagination and tag styles */
 .pagination__page-number {
   display: inline-block;
   padding: 10px;
@@ -202,8 +201,18 @@ body {
 }
 
 .footer__copyright {
-    margin: 0 20px 10px;
+  margin: 0 20px 10px;
 }
+
+.user-image {
+  margin-bottom: 1.2em;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+}
+
 
 .user-image {
   margin-bottom: 1.2em;
