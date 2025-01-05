@@ -124,41 +124,45 @@ pre.highlight code,
   background-repeat: no-repeat !important;  /* Prevent tiling */
 }
 
-/* Mobile Social Icons - Always visible */
-@media only screen and (max-width: 768px) {
-  .cover-navigation {
-    display: flex;
-    flex-direction: row;  /* Display the social links in a row */
-    justify-content: space-between;  /* Space out the icons */
-    padding: 20px;
-    background-color: #333;
-  }
+/* Ensure cover-navigation is visible on mobile */
+.cover-navigation {
+  display: flex;
+  flex-direction: row; /* Arrange links horizontally */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px; /* Add some spacing above the links */
+}
 
-  .cover-navigation .navigation__item {
-    margin: 0 10px;  /* Space out the social links */
+/* Social Icons and Links Style */
+.cover-navigation .navigation__item {
+  margin: 10px;
+  text-align: center;
+}
+
+.cover-navigation .navigation__item a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.cover-navigation .navigation__item a:hover {
+  color: #f39c12; /* Hover effect for links */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .cover-navigation {
+    flex-direction: column; /* Stack social links vertically on smaller screens */
+    align-items: center;
   }
 
   .cover-navigation .navigation__item a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
-
-  .cover-navigation .navigation__item a:hover {
-    color: #f39c12; /* Hover effect for social links */
-  }
-
-  /* Hide the burger menu icon */
-  .btn-mobile-menu {
-    display: none;  /* Remove the hamburger menu icon */
-  }
-
-  /* Show all social icons directly on mobile */
-  .navigation-wrapper {
-    display: none; /* Ensure the mobile menu does not show */
+    font-size: 14px; /* Adjust font size on mobile */
+    padding: 10px;
   }
 }
+
 
 
 /* Body background */
