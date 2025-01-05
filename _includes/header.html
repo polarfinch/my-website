@@ -1,6 +1,6 @@
 <span class="mobile btn-mobile-menu">
-  <i class="icon icon-list btn-mobile-menu__icon"></i>
-  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+  <i class="icon icon-list btn-mobile-menu__icon"></i>  <!-- Burger Icon -->
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>  <!-- Close Icon -->
 </span>
 
 <header class="panel-cover {% if site.disable_landing_page %}panel-cover--collapsed{% endif %}"
@@ -17,17 +17,11 @@
         <p class="panel-cover__description">{{ site.description }}</p>
         <hr class="panel-cover__divider panel-cover__divider--secondary">
 
+        <!-- Wrap the navigation and social links to make them toggleable -->
         <div class="navigation-wrapper">
-
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-              
-            </ul>
-          </nav>
-
+          <!-- Social Links Navigation -->
           <nav class="cover-navigation navigation--social">
             <ul class="navigation">
-
               {% if site.author.twitter_username %}
               <!-- Twitter -->
               <li class="navigation__item">
@@ -56,7 +50,6 @@
                </a>
               </li>
 
-
               <!-- Bandcamp -->
               <li class="navigation__item">
                 <a href="https://polarfinch.bandcamp.com/" 
@@ -77,7 +70,6 @@
               </a>
             </li>
               {% endif %}
-
               
               {% if site.author.facebook_username %}
               <!-- Facebook -->
@@ -121,16 +113,13 @@
                </a>
               </li>
               {% endif %}
-              
             </ul>
           </nav>
 
         </div>
 
       </div>
-
     </div>
-
     <div class="panel-cover--overlay"></div>
   </div>
 </header>
