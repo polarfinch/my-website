@@ -27,15 +27,22 @@ exclude: 'yes'
     }
     {% endif %}
 
-    $('.btn-mobile-menu').click(function () {
-      $('.navigation-wrapper').toggleClass('visible animated bounceInDown')
-      $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
-    })
+    $(document).ready(function () {
+  // Toggle menu visibility when burger icon is clicked
+  $('.btn-mobile-menu').click(function () {
+    $('.navigation-wrapper').toggleClass('visible animated bounceInDown'); // Show/hide the menu
+    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn'); // Toggle burger and close icon
+  });
 
-    $('.navigation-wrapper .blog-button').click(function () {
-      $('.navigation-wrapper').toggleClass('visible')
-      $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
-    })
+  // Optional: Toggle visibility when clicking on the close (X) icon
+  $('.btn-mobile-close__icon').click(function () {
+    $('.navigation-wrapper').toggleClass('visible animated bounceInDown'); // Hide the menu
+    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn'); // Show the burger icon again
+  });
+});
+
+
+    
 
   })
 
