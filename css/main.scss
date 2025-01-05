@@ -50,6 +50,16 @@ pre.highlight code,
   font-size: 30px; /* Adjust size */
   cursor: pointer;
 }
+@media (min-width: 768px) {
+  .navigation-wrapper {
+    display: block !important;  /* Make sure the menu is visible on larger screens */
+  }
+
+  .btn-mobile-menu {
+    display: none;  /* Hide the burger menu on desktop */
+  }
+}
+
 
 /* Hide the close icon initially */
 .btn-mobile-close__icon {
