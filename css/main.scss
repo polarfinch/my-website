@@ -124,6 +124,88 @@ pre.highlight code,
   background-repeat: no-repeat !important;  /* Prevent tiling */
 }
 
+/* Initial state of the navigation */
+.navigation-wrapper {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0.3s ease;
+}
+
+/* When the menu is visible */
+.navigation-wrapper.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Burger icon button styles */
+.btn-mobile-menu {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;  /* Adjust the position as necessary */
+  right: 20px; /* Adjust the position as necessary */
+  z-index: 100; /* Ensure the burger button is on top */
+}
+
+/* Burger icon (hamburger) styles */
+.btn-mobile-menu__icon {
+  font-size: 24px;
+  transition: opacity 0.3s ease;
+}
+
+/* Close icon styles */
+.btn-mobile-close__icon {
+  display: none;
+  font-size: 24px;
+}
+
+/* Show the close (X) icon when menu is visible */
+.navigation-wrapper.visible .btn-mobile-menu__icon.icon-list {
+  display: none;
+}
+
+.navigation-wrapper.visible .btn-mobile-close__icon {
+  display: block;
+}
+
+/* Mobile Menu Social Icons */
+.cover-navigation--social {
+  display: flex;
+  flex-direction: column; /* Align social icons vertically */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cover-navigation--social .navigation__item {
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Mobile Menu Social Icons when visible */
+@media (max-width: 768px) {
+  .cover-navigation--social {
+    flex-direction: column;  /* Keep icons in column layout for mobile */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navigation__item a {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
 /* Body background */
 body {
   background-image: url('/images/background.jpg'); /* Ensure this path is correct */
