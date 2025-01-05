@@ -40,44 +40,29 @@ pre.highlight code,
   transition: opacity 0.3s ease, display 0.3s ease;
 }
 
-/* When the menu is visible */
-.navigation-wrapper.visible {
-  display: block;
-  opacity: 1;
+/* Make sure the social links are always visible on mobile */
+.navigation--social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-/* Burger and Close Icon Styles */
-.btn-mobile-menu__icon,
-.btn-mobile-close__icon {
-  font-size: 30px; /* Adjust size */
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .navigation-wrapper {
-    display: block !important;  /* Ensure the menu is visible on larger screens */
-    opacity: 1 !important;  /* Ensure the menu is fully visible */
+/* For mobile screens, make sure the social links are visible */
+@media (max-width: 768px) {
+  .navigation--social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
   }
-
-  .btn-mobile-menu {
-    display: none;  /* Hide the burger menu on desktop */
+  /* Optional: Adjust icons size or layout on small screens */
+  .navigation__item a {
+    font-size: 14px;
   }
 }
 
-/* Hide the close icon initially */
-.btn-mobile-close__icon {
-  display: none;
-}
-
-/* Show the close icon when the menu is visible */
-.navigation-wrapper.visible .btn-mobile-close__icon {
-  display: inline-block;
-}
-
-/* Change burger icon visibility when the menu is visible */
-.navigation-wrapper.visible .btn-mobile-menu__icon {
-  display: none;
-}
 
 /* Apply background images and size them correctly */
 
