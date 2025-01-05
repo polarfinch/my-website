@@ -2,135 +2,100 @@
 @import "tables";
 @import "monokai";
 
-/* Modifications */
-
-pre.highlight,
-.highlight pre {
-  padding: 10px;
+/* Reverting Changes to the Mobile Menu */
+.navigation-wrapper {
+  display: none; /* Ensure mobile navigation is hidden by default */
 }
 
-pre.highlight code,
-.highlight pre code {
-  white-space: pre-wrap;
+.btn-mobile-menu {
+  cursor: pointer; /* Make button clickable */
 }
 
-/* Ensure the container is a perfect circle */
-.navigation__item a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;  /* Remove any padding to ensure width and height remain consistent */
-  width: 80px;  /* Set the width of the circle */
-  height: 80px;  /* Set the height of the circle */
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  line-height: 0;
-  vertical-align: middle;
-  overflow: hidden;
+.btn-mobile-menu__icon {
+  font-size: 24px;
 }
 
-/* Apply background images and size them correctly */
-
-/* Bandcamp Icon */
-.icon-bandcamp {
-  background-size: 90% auto;  /* Make the background image slightly bigger */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 90px;
-  height: 90px;
-}
-
-/* Spotify Icon */
-.icon-spotify {
-  background-size: 70% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 80px;
-}
-
-/* Apple Music Icon */
-.icon-apple-music {
-  background-image: url('/images/favicons/applemusic.png'); /* Add the path to your Apple Music icon */
-  background-size: 80% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 80px;
-}
-
-/* Instagram Icon */
-.icon-instagram {
-  background-size: 75% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 65px;
-  height: 65px;
-}
-
-/* Facebook Icon */
-.icon-facebook {
-  background-size: 65% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 80px;
-}
-
-/* Email Icon */
+/* Reset Social Icon Styles */
+.icon-bandcamp,
+.icon-spotify,
+.icon-apple-music,
+.icon-instagram,
+.icon-facebook,
 .icon-email {
-  background-size: 80% auto;  /* Adjust the size to fit within the circle */
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 60px;
-  height: 60px;
 }
 
-/* Set the background images */
 .icon-bandcamp {
+  width: 80px;
+  height: 80px;
   background-image: url('/images/favicons/bandcamp-icon.png');
 }
+
 .icon-spotify {
+  width: 80px;
+  height: 80px;
   background-image: url('/images/favicons/spotify.png');
 }
+
+.icon-apple-music {
+  width: 80px;
+  height: 80px;
+  background-image: url('/images/favicons/applemusic.png');
+}
+
 .icon-instagram {
+  width: 80px;
+  height: 80px;
   background-image: url('/images/favicons/instagram.png');
 }
+
 .icon-facebook {
+  width: 80px;
+  height: 80px;
   background-image: url('/images/favicons/facebook.png');
 }
+
 .icon-email {
+  width: 80px;
+  height: 80px;
   background-image: url('/images/favicons/email.png');
 }
 
-/* Hide the <img> tags completely */
+/* Reset Social Icons Image Display */
 .icon-bandcamp img,
 .icon-spotify img,
 .icon-instagram img,
 .icon-facebook img,
 .icon-email img {
-  display: none !important;  /* Hide <img> tags completely */
+  display: block;
 }
 
-/* Optional: Add more specific handling for the icon-email if needed */
-.icon-email {
-  background-size: contain !important;  /* Force correct image sizing */
-  background-position: center !important;  /* Ensure the image is centered */
-  background-repeat: no-repeat !important;  /* Prevent tiling */
-}
-
-/* Body background */
+/* Body Background */
 body {
-  background-image: url('/images/background.jpg'); /* Ensure this path is correct */
+  background-image: url('/images/background.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; /* Optional, makes the background fixed */
-  font-family: Arial, sans-serif;
-  height: 100%;
-  margin: 0;
+  background-attachment: fixed;
 }
 
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+}
+
+.header img {
+  height: 40px;
+  width: auto;
+}
+
+/* Pagination, Categories, and Tags */
 .pagination__page-number {
   display: inline-block;
   padding: 10px;
@@ -172,134 +137,4 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-}
-
-/* Mobile Menu Button */
-.btn-mobile-menu {
-  cursor: pointer; /* Make it clickable */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background: none;
-  border: none;
-  position: relative;
-}
-
-/* Mobile Menu Icon */
-.btn-mobile-menu__icon {
-  font-size: 24px;
-  transition: opacity 0.3s ease; /* Smooth transition for the icon */
-}
-
-.btn-mobile-menu__icon.icon-x-circle {
-  display: none; /* Initially hide the close (X) icon */
-}
-
-/* Mobile Navigation Wrapper (Hidden by default) */
-.navigation-wrapper {
-  max-height: 0; /* Start with zero height */
-  overflow: hidden; /* Hide content when collapsed */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth opacity and height transition */
-  display: flex;
-  flex-direction: column;
-}
-
-/* When the Menu is Visible */
-.navigation-wrapper.visible {
-  max-height: 500px; /* Set a large value for when the menu is visible */
-  opacity: 1; /* Make it visible */
-}
-
-/* Mobile Navigation Menu */
-.cover-navigation {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #333;
-  color: white;
-}
-
-.cover-navigation .navigation__item {
-  margin: 10px 0;
-}
-
-.cover-navigation .navigation__item a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.cover-navigation .navigation__item a:hover {
-  color: #f39c12; /* Hover effect for links */
-}
-
-/* Social Icons - Example */
-.cover-navigation .navigation__item i {
-  margin-right: 8px;
-}
-
-/* Close Button Icon Visibility */
-.btn-mobile-menu__icon.icon-list {
-  display: block; /* Show the hamburger icon initially */
-}
-
-.btn-mobile-menu__icon.icon-x-circle {
-  display: none; /* Hide the close icon initially */
-}
-
-/* When the Menu is Visible, Show Close (X) Icon */
-.navigation-wrapper.visible .btn-mobile-menu__icon.icon-list {
-  display: none; /* Hide hamburger icon when menu is visible */
-}
-
-.navigation-wrapper.visible .btn-mobile-menu__icon.icon-x-circle {
-  display: block; /* Show close (X) icon when menu is visible */
-  font-size: 24px;
-}
-
-/* Optional: Adding a smooth background overlay for the menu */
-.panel-cover--overlay {
-  display: none; /* Hidden by default */
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Show the overlay when menu is visible */
-.navigation-wrapper.visible + .panel-cover--overlay {
-  display: block;
-  opacity: 1;
-}
-
-/* Make sure to use flexbox for the header content */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #333;
-  color: white;
-}
-
-.header img {
-  height: 40px;
-  width: auto;
-}
-
-/* Optional: Mobile menu background and animation */
-.panel-cover {
-  position: relative;
-}
-
-.panel-cover--overlay {
-  z-index: 5;
 }
