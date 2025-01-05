@@ -1,10 +1,4 @@
----
-  layout: null
-sitemap:
-exclude: 'yes'
----
-
-  $(document).ready(function () {
+ $(document).ready(function () {
     {% if site.disable_landing_page != true %}
     $('a.blog-button').click(function (e) {
       if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
