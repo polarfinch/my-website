@@ -32,7 +32,12 @@ pre.highlight code,
   vertical-align: middle;
   overflow: hidden;
 }
-
+/* Burger menu styles */
+.navigation-wrapper {
+  display: none;  /* Hide the menu on small screens */
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0.3s ease;
+}
 /* Initially hide the navigation menu on mobile */
 .navigation-wrapper {
   display: none;
@@ -48,12 +53,7 @@ pre.highlight code,
   margin-top: 20px;
   flex-wrap: wrap;
 }
-/* Burger menu styles */
-.navigation-wrapper {
-  display: none;  /* Hide the menu on small screens */
-  opacity: 0;
-  transition: opacity 0.3s ease, display 0.3s ease;
-}
+
 /* For mobile screens, make sure the social links are visible */
 @media (max-width: 768px) {
   .navigation--social {
