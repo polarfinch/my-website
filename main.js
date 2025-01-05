@@ -1,86 +1,181 @@
-$(document).ready(function () {
-  {% if site.disable_landing_page != true %}
-  $('a.blog-button').click(function (e) {
-    if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
-    currentWidth = $('.panel-cover').width()
-    if (currentWidth < 960) {
-      $('.panel-cover').addClass('panel-cover--collapsed')
-      $('.content-wrapper').addClass('animated slideInRight')
-    } else {
-      $('.panel-cover').css('max-width', currentWidth)
-      $('.panel-cover').animate({ 'max-width': '530px', 'width': '40%' }, 400, swing = 'swing', function () { })
-    }
-  })
+---
+---
+@import "uno";
+@import "tables";
+@import "monokai";
 
-  if (window.location.hash && window.location.hash == '#blog') {
-    $('.panel-cover').addClass('panel-cover--collapsed')
-  }
+/* Modifications */
 
-  if (window.location.pathname !== '{{ site.baseurl }}/' && window.location.pathname !== '{{ site.baseurl }}/index.html') {
-    $('.panel-cover').addClass('panel-cover--collapsed')
-  }
-  {% endif %}
-
-  // Mobile menu toggle functionality
-  $('.btn-mobile-menu').click(function () {
-    $('.navigation-wrapper').toggleClass('visible animated bounceInDown')
-    $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
-  })
-
- 
-
-
-/* Initially, hide the navigation wrapper */
-.navigation-wrapper {
-  display: none;  /* This hides the menu initially */
-  opacity: 0;     /* Start with the menu invisible */
-  transition: opacity 0.3s ease; /* Smooth transition for fading in */
+pre.highlight,
+.highlight pre {
+  padding: 10px;
 }
 
-/* Show the navigation wrapper when the 'visible' class is added */
-.navigation-wrapper.visible {
-  display: block; /* Makes the menu visible when the 'visible' class is added */
-  opacity: 1;     /* Fade in the menu */
-  transform: translateY(0); /* Optional sliding effect */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Smooth transition for sliding and fading */
+pre.highlight code,
+.highlight pre code {
+  white-space: pre-wrap;
 }
 
-/* Initially, hide the hamburger icon */
-.btn-mobile-menu__icon.icon-list {
-  display: block; /* Show the hamburger icon */
-  opacity: 1;
-  transition: opacity 0.3s ease; /* Smooth fade in transition */
+/* Ensure the container is a perfect circle */
+.navigation__item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;  /* Remove any padding to ensure width and height remain consistent */
+  width: 80px;  /* Set the width of the circle */
+  height: 80px;  /* Set the height of the circle */
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  line-height: 0;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
-/* Initially, hide the close (X) icon */
-.btn-mobile-menu__icon.icon-x-circle {
-  display: none;  /* Hide close icon initially */
-  opacity: 0;
-  transition: opacity 0.3s ease; /* Smooth fade in transition */
+/* Apply background images and size them correctly */
+
+/* Bandcamp Icon */
+.icon-bandcamp {
+  background-size: 90% auto;  /* Make the background image slightly bigger */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
 }
 
-/* When the close icon is active (menu open), show it and hide the hamburger */
-.btn-mobile-menu__icon.icon-list {
-  display: none;  /* Hide hamburger icon when menu is open */
-  opacity: 0;
+/* Spotify Icon */
+.icon-spotify {
+  background-size: 70% auto;  /* Adjust the size to fit within the circle */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
 }
 
-.btn-mobile-menu__icon.icon-x-circle {
-  display: block;  /* Show the close icon */
-  opacity: 1;      /* Make it visible */
-  transition: opacity 0.3s ease; /* Smooth transition for fade in/out */
+/* Apple Music Icon */
+.icon-apple-music {
+  background-image: url('/images/favicons/applemusic.png'); /* Add the path to your Apple Music icon */
+  background-size: 80% auto;  /* Adjust the size to fit within the circle */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
 }
 
-/* Optional: You can add more custom styles for menu items or other animations if needed */
-
-/* Style for when the panel is collapsed (useful if you're controlling the overall page layout) */
-.panel-cover--collapsed {
-  max-width: 0 !important;
-  opacity: 0;
-  transition: opacity 0.3s ease, max-width 0.3s ease;
+/* Instagram Icon */
+.icon-instagram {
+  background-size: 75% auto;  /* Adjust the size to fit within the circle */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 65px;
+  height: 65px;
 }
 
-/* Ensure that the animated classes are appropriately handled by the animation library (like Animate.css) */
-.animated {
-  animation-duration: 0.3s; /* Ensure the animations don't last too long */
+/* Facebook Icon */
+.icon-facebook {
+  background-size: 65% auto;  /* Adjust the size to fit within the circle */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
 }
+
+/* Email Icon */
+.icon-email {
+  background-size: 80% auto;  /* Adjust the size to fit within the circle */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+}
+
+/* Set the background images */
+.icon-bandcamp {
+  background-image: url('/images/favicons/bandcamp-icon.png');
+}
+.icon-spotify {
+  background-image: url('/images/favicons/spotify.png');
+}
+.icon-instagram {
+  background-image: url('/images/favicons/instagram.png');
+}
+.icon-facebook {
+  background-image: url('/images/favicons/facebook.png');
+}
+.icon-email {
+  background-image: url('/images/favicons/email.png');
+}
+
+/* Hide the <img> tags completely */
+.icon-bandcamp img,
+.icon-spotify img,
+.icon-instagram img,
+.icon-facebook img,
+.icon-email img {
+  display: none !important;  /* Hide <img> tags completely */
+}
+
+
+
+/* Optional: Add more specific handling for the icon-email if needed */
+.icon-email {
+  background-size: contain !important;  /* Force correct image sizing */
+  background-position: center !important;  /* Ensure the image is centered */
+  background-repeat: no-repeat !important;  /* Prevent tiling */
+}
+
+/* Body background */
+body {
+  background-image: url('/images/background.jpg'); /* Ensure this path is correct */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* Optional, makes the background fixed */
+}
+
+
+
+.pagination__page-number {
+  display: inline-block;
+  padding: 10px;
+}
+
+.categories a,
+.tags a {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 12px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.post-meta__tags {
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.footer__copyright {
+    margin: 0 20px 10px;
+}
+
+.user-image {
+  margin-bottom: 1.2em;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #fff;
+  border-radius:100%;
+}
+
+
+
+body {
+  background-image: url('/images/background.jpg');
+ background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* Optional, makes the background fixed */
+}
+
