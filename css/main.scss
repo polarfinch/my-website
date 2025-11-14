@@ -44,7 +44,7 @@ pre.highlight code,
    SOCIAL NAV CIRCLES (background images)
 ---------------------------------------- */
 
-/* Center the whole social nav block */
+/* Center the whole nav block (primary + social) */
 .navigation-wrapper {
   text-align: center;
   margin-top: 2rem;
@@ -135,31 +135,10 @@ pre.highlight code,
 }
 
 /* ---------------------------------------
-   MOBILE TWEAKS
----------------------------------------- */
-
-@media (max-width: 480px) {
-  .cover-navigation.navigation--social .navigation {
-    gap: 18px;
-  }
-
-  .cover-navigation.navigation--social .navigation__item a {
-    width: 80px;
-    height: 80px;
-    border-width: 1.5px;
-  }
-
-  .cover-navigation.navigation--social .navigation__item a div {
-    width: 48px;
-    height: 48px;
-    background-size: 85%;
-  }
-}
-
-/* ---------------------------------------
    MOBILE LAYOUT + SOCIAL ICONS
+   (phones + small tablets)
 ---------------------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   /* stop vertical centering on mobile */
   .panel-main__inner {
     display: block !important;
@@ -167,39 +146,36 @@ pre.highlight code,
 
   .panel-main__content {
     display: block !important;
-    padding: 1.5rem 1rem 3rem;  /* some top/bottom breathing room */
+    padding: 1.5rem 1rem 3rem;  /* top / sides / bottom */
   }
 
   /* more space under the profile photo */
   .user-image {
-    margin-bottom: 2.2em;
+    margin-bottom: 2.4em;
   }
 
-  /* push all nav (menu + socials) down a bit */
+  /* push nav (menu + socials) down a bit */
   .navigation-wrapper {
     margin-top: 2.5rem !important;
   }
 
-  /* social nav layout */
-  .cover-navigation.navigation--social .navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  /* make sure social nav is visible */
+  .cover-navigation.navigation--social {
+    display: block !important;
+    margin-top: 1.5rem;
   }
 
-  .cover-navigation.navigation--social .navigation__item {
-    margin: 0;
-    padding: 0;
+  /* social nav layout on mobile */
+  .cover-navigation.navigation--social .navigation {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .cover-navigation.navigation--social .navigation__item a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 80px;
     height: 80px;
     border-width: 1.5px;
@@ -213,18 +189,16 @@ pre.highlight code,
 }
 
 /* ---------------------------------------
-   MOBILE SPACING FIXES
+   Hide the mobile burger menu icon
 ---------------------------------------- */
-
-@media (max-width: 480px) {
-  /* more breathing room under the profile photo */
-  .user-image {
-    margin-bottom: 2.8em;
-  }
-
-  /* push the whole nav block further down */
-  .navigation-wrapper {
-    margin-top: 3rem !important;
-  }
+.btn-mobile-menu {
+  display: none !important;
 }
 
+/* ---------------------------------------
+   Remove stray bottom divider line
+---------------------------------------- */
+
+.main-post-list > hr.post-list__divider {
+  display: none;
+}
