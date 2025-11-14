@@ -233,3 +233,29 @@ body {
 .navigation__item {
   margin: 10px;           /* extra breathing room */
 }
+
+/* Fix social icon layout on mobile */
+.navigation {
+  display: flex;
+  flex-wrap: wrap;        /* <-- allow circles to go to the next line */
+  justify-content: center;
+  gap: 20px;              /* <-- space between circles */
+}
+
+/* Each circle */
+.navigation__item {
+  margin: 10px;           /* extra breathing room */
+}
+
+
+@media (max-width: 480px) {
+  .navigation__item a {
+    width: 70px;
+    height: 70px;
+  }
+
+  .navigation__item a div {
+    width: 35px;
+    height: 35px;
+  }
+}
