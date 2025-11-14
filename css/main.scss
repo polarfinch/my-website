@@ -125,3 +125,18 @@ pre.highlight code,
 .main-post-list > hr.post-list__divider {
   display: none;
 }
+
+/* ---------------------------------------
+   Raise profile photo + title
+---------------------------------------- */
+
+.panel-main__content {
+  padding-top: 1.2rem; /* was more by default – this pulls everything upward */
+}
+
+/* Mobile: raise even more */
+@media (max-width: 480px) {
+  .panel-main__content {
+    padding-top: 0.6rem;
+  }
+}
