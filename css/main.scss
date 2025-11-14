@@ -276,3 +276,37 @@ body {
   background-size: 80% auto;   /* small boost so they feel equal */
 }
 
+/* Make all icons behave consistently */
+.navigation__item a div {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%; /* global default */
+}
+
+/* Individual tweaks for optical balance */
+.icon-spotify {
+  background-size: 60%;
+}
+
+.icon-apple-music {
+  background-size: 80%;
+  background-position-y: 55%; /* lift it slightly */
+}
+
+.icon-bandcamp {
+  background-size: 75%;
+}
+
+.icon-instagram {
+  background-size: 70%;
+}
+
+.icon-facebook {
+  background-size: 70%;
+}
+
+.icon-email {
+  background-size: 70%;
+}
