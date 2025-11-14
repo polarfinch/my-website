@@ -248,3 +248,31 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Base icon box inside each circle */
+.navigation__item a div {
+  width: 42px;
+  height: 42px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70% auto;   /* global default */
+}
+
+/* Per-logo tweaks so they look the same size by eye */
+.icon-spotify {
+  background-size: 65% auto;   /* a bit smaller, it's naturally bold */
+}
+
+.icon-apple-music {
+  background-size: 95% auto;   /* make it bigger, it's naturally tiny */
+}
+
+.icon-bandcamp {
+  background-size: 85% auto;   /* slightly bigger */
+}
+
+.icon-instagram,
+.icon-facebook,
+.icon-email {
+  background-size: 80% auto;   /* small boost so they feel equal */
+}
+
