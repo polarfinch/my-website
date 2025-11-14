@@ -1,5 +1,6 @@
 ---
 ---
+
 @import "uno";
 @import "tables";
 @import "monokai";
@@ -87,7 +88,7 @@ pre.highlight code,
   position: relative;
 }
 
-/* Hide text label visually but keep for screen readers */
+/* Hide text label visually but keep it for screen readers */
 .cover-navigation.navigation--social .navigation__item .label {
   position: absolute;
   left: -9999px;
@@ -95,8 +96,8 @@ pre.highlight code,
 
 /* Inner div that shows the icon */
 .cover-navigation.navigation--social .navigation__item a div {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%;
@@ -104,32 +105,32 @@ pre.highlight code,
 
 /* Icon images – using your /images/favicons files */
 .icon-spotify {
-  background-image: url("{{ site.baseurl }}/images/favicons/spotify.png");
+  background-image: url("/images/favicons/spotify.png");
   background-size: 78%;
 }
 
 .icon-apple-music {
-  background-image: url("{{ site.baseurl }}/images/favicons/applemusic.png");
+  background-image: url("/images/favicons/applemusic.png");
   background-size: 95%;
 }
 
 .icon-bandcamp {
-  background-image: url("{{ site.baseurl }}/images/favicons/bandcamp-icon.png");
+  background-image: url("/images/favicons/bandcamp-icon.png");
   background-size: 92%;
 }
 
 .icon-instagram {
-  background-image: url("{{ site.baseurl }}/images/favicons/instagram.png");
+  background-image: url("/images/favicons/instagram.png");
   background-size: 85%;
 }
 
 .icon-facebook {
-  background-image: url("{{ site.baseurl }}/images/favicons/facebook.png");
+  background-image: url("/images/favicons/facebook.png");
   background-size: 80%;
 }
 
 .icon-email {
-  background-image: url("{{ site.baseurl }}/images/favicons/email.png");
+  background-image: url("/images/favicons/email.png");
   background-size: 88%;
 }
 
@@ -149,8 +150,8 @@ pre.highlight code,
   }
 
   .cover-navigation.navigation--social .navigation__item a div {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     background-size: 85%;
   }
 }
