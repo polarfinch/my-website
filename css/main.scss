@@ -157,3 +157,57 @@ body {
     gap: 15px;
   }
 }
+
+/* Center all icon rows perfectly */
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;  /* uniform spacing */
+  padding-top: 10px;
+}
+
+/* Circle containers */
+.navigation__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90px;    /* bigger, cleaner */
+  height: 90px;
+  border-radius: 50%;
+
+  border: 2px solid rgba(255,255,255,0.8);
+  background: transparent;
+
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* Icon inside circle — consistent ALWAYS */
+.navigation__item a div {
+  width: 42px;  
+  height: 42px;
+
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Mobile refinement */
+@media (max-width: 480px) {
+  .navigation__item a {
+    width: 80px;
+    height: 80px;
+  }
+
+  .navigation__item a div {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+}
