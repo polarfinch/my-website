@@ -134,3 +134,32 @@ pre.highlight code,
     height: 36px;
   }
 }
+
+/* ---------------------------------------
+   Bigger, better balanced icons
+---------------------------------------- */
+
+.navigation__item a div {
+  width: 50px;       /* was 40 */
+  height: 50px;      /* was 40 */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;   /* global bump */
+}
+
+/* Per-icon fine-tuning */
+.icon-spotify        { background-size: 78%; }
+.icon-apple-music    { background-size: 95%; }   /* Apple logo is thin → boost */
+.icon-bandcamp       { background-size: 92%; }   /* thin → boost */
+.icon-instagram      { background-size: 85%; }
+.icon-facebook       { background-size: 80%; }
+.icon-email          { background-size: 88%; }   /* envelope is thin → boost */
+
+/* Mobile */
+@media (max-width: 480px) {
+  .navigation__item a div {
+    width: 46px;    /* was 36 */
+    height: 46px;
+    background-size: 85%;
+  }
+}
