@@ -1,10 +1,11 @@
 ---
 ---
+/* Base imports */
 @import "uno";
 @import "tables";
 @import "monokai";
 
-/* Modifications */
+/* ----------- GENERAL CODE/FORMAT FIXES ----------- */
 
 pre.highlight,
 .highlight pre {
@@ -16,147 +17,31 @@ pre.highlight code,
   white-space: pre-wrap;
 }
 
+/* ----------- BACKGROUND ----------- */
 
-/* Ensure the container is a perfect circle */
-.navigation__item a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;  /* Remove any padding to ensure width and height remain consistent */
-  width: 80px;  /* Set the width of the circle */
-  height: 80px;  /* Set the height of the circle */
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  line-height: 0;
-  vertical-align: middle;
-  overflow: hidden;
-}
-/* Hide burger menu on mobile */
-@media (max-width: 768px) {
-  .btn-mobile-menu {
-    display: none;  /* Hide the burger menu on mobile */
-  }
-
-  .navigation-wrapper {
-    display: none !important;  /* Ensure the mobile navigation is hidden */
-  }
-
-  /* Make sure the social links are visible */
-  .navigation--social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-
-  /* Adjust size of social icons on mobile */
-  .navigation__item a {
-    font-size: 14px;
-  }
-}
-
-
-/* Apply background images and size them correctly */
-
-/* Bandcamp Icon */
-.icon-bandcamp {
-  background-size: 90% auto;  /* Make the background image slightly bigger */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 90px;
-  height: 90px;
-}
-
-/* Spotify Icon */
-.icon-spotify {
-  background-size: 70% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 80px;
-}
-
-/* Apple Music Icon */
-.icon-apple-music {
-  background-image: url('/images/favicons/applemusic.png'); /* Add the path to your Apple Music icon */
-  background-size: 80% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 80px;
-}
-
-/* Instagram Icon */
-.icon-instagram {
-  background-size: 75% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 65px;
-  height: 65px;
-}
-
-/* Facebook Icon */
-.icon-facebook {
-  background-size: 65% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 80px;
-}
-
-/* Email Icon */
-.icon-email {
-  background-size: 80% auto;  /* Adjust the size to fit within the circle */
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 60px;
-  height: 60px;
-}
-
-/* Set the background images */
-.icon-bandcamp {
-  background-image: url('/images/favicons/bandcamp-icon.png');
-}
-.icon-spotify {
-  background-image: url('/images/favicons/spotify.png');
-}
-.icon-instagram {
-  background-image: url('/images/favicons/instagram.png');
-}
-.icon-facebook {
-  background-image: url('/images/favicons/facebook.png');
-}
-.icon-email {
-  background-image: url('/images/favicons/email.png');
-}
-
-/* Hide the <img> tags completely */
-.icon-bandcamp img,
-.icon-spotify img,
-.icon-instagram img,
-.icon-facebook img,
-.icon-email img {
-  display: none !important;  /* Hide <img> tags completely */
-}
-
-/* Optional: Add more specific handling for the icon-email if needed */
-.icon-email {
-  background-size: contain !important;  /* Force correct image sizing */
-  background-position: center !important;  /* Ensure the image is centered */
-  background-repeat: no-repeat !important;  /* Prevent tiling */
-}
-
-/* Body background */
 body {
-  background-image: url('/images/background.jpg'); /* Ensure this path is correct */
+  background-image: url('/images/background.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; /* Optional, makes the background fixed */
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
 }
 
-/* Pagination and tag styles */
+/* ----------- USER IMAGE (PROFILE PHOTO) ----------- */
+
+.user-image {
+  margin-bottom: 1.2em;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+/* ----------- TAGS / CATEGORIES ----------- */
+
 .pagination__page-number {
   display: inline-block;
   padding: 10px;
@@ -171,7 +56,6 @@ body {
   font-size: 12px;
   margin: 5px 0;
   padding: 5px 10px;
-  text-shadow: none;
   white-space: nowrap;
 }
 
@@ -184,15 +68,25 @@ body {
   margin: 0 20px 10px;
 }
 
-.user-image {
-  margin-bottom: 1.2em;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border: 3px solid #fff;
-  border-radius: 100%;
+
+
+/* =======================================================
+   ============  SOCIAL ICONS — FULL FIX   ===============
+   ======================================================= */
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;        /* space between circles */
+  margin-top: 20px;
 }
-/* Perfectly aligned circular social icons */
+
+.navigation__item {
+  margin: 5px;
+}
+
+/* -- MAIN CIRCLE CONTAINER --------------------------- */
 .navigation__item a {
   display: flex;
   align-items: center;
@@ -204,58 +98,62 @@ body {
   border-radius: 50%;
   border: 1px solid #ffffff;
   background: transparent;
-
   padding: 0;
   margin: 0;
   overflow: hidden;
-
   text-decoration: none;
 }
 
-/* Ensure the icon div inside stays centered and scaled */
+/* -- INNER ICON CONTAINER ---------------------------- */
 .navigation__item a div {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-/* Fix social icon layout on mobile */
-.navigation {
-  display: flex;
-  flex-wrap: wrap;        /* <-- allow circles to go to the next line */
-  justify-content: center;
-  gap: 20px;              /* <-- space between circles */
+/* ----------- ICON IMAGES ----------- */
+
+.icon-bandcamp    { background-image: url('/images/favicons/bandcamp-icon.png'); }
+.icon-spotify     { background-image: url('/images/favicons/spotify.png'); }
+.icon-apple-music { background-image: url('/images/favicons/applemusic.png'); }
+.icon-instagram   { background-image: url('/images/favicons/instagram.png'); }
+.icon-facebook    { background-image: url('/images/favicons/facebook.png'); }
+.icon-email       { background-image: url('/images/favicons/email.png'); }
+
+/* Hide fallback images */
+.navigation__item img {
+  display: none !important;
 }
 
-/* Each circle */
-.navigation__item {
-  margin: 10px;           /* extra breathing room */
-}
+/* ----------- MOBILE FIXES ----------- */
 
-/* Fix social icon layout on mobile */
-.navigation {
-  display: flex;
-  flex-wrap: wrap;        /* <-- allow circles to go to the next line */
-  justify-content: center;
-  gap: 20px;              /* <-- space between circles */
-}
+@media (max-width: 768px) {
+  .btn-mobile-menu {
+    display: none;
+  }
 
-/* Each circle */
-.navigation__item {
-  margin: 10px;           /* extra breathing room */
+  .navigation-wrapper {
+    display: none !important;
+  }
 }
-
 
 @media (max-width: 480px) {
+
+  /* Smaller circles */
   .navigation__item a {
     width: 70px;
     height: 70px;
   }
 
+  /* Smaller icons */
   .navigation__item a div {
     width: 35px;
     height: 35px;
+  }
+
+  .navigation {
+    gap: 15px;
   }
 }
