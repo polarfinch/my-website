@@ -156,3 +156,50 @@ pre.highlight code,
   }
 }
 
+/* ---------------------------------------
+   FORCE SOCIAL NAV VISIBLE ON MOBILE
+---------------------------------------- */
+
+@media (max-width: 768px) {
+  /* keep wrapper visible */
+  .navigation-wrapper {
+    display: block !important;
+  }
+
+  /* show social nav and push it down a bit */
+  .cover-navigation.navigation--social {
+    display: block !important;
+    margin-top: 2.5rem !important;   /* move circles further below the profile pic */
+  }
+
+  /* flex layout for icons */
+  .cover-navigation.navigation--social .navigation {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none;
+  }
+
+  .cover-navigation.navigation--social .navigation__item {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cover-navigation.navigation--social .navigation__item a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 80px !important;
+    height: 80px !important;
+    border-width: 1.5px !important;
+  }
+}
+
+/* Hide the mobile burger menu icon */
+.btn-mobile-menu {
+  display: none !important;
+}
