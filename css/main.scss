@@ -151,31 +151,28 @@ pre.highlight code,
   }
 }
 
-/* ---------------------------------------
-   ICON IMAGE PATHS
----------------------------------------- */
+/* Social icon images — correct paths + correct filenames */
 
 .icon-spotify {
-  background-image: url("/images/icons/spotify.png");
+  background-image: url("/images/favicons/spotify.png");
 }
 
 .icon-apple-music {
-  background-image: url("/images/icons/apple-music.png");
+  background-image: url("/images/favicons/applemusic.png");
 }
 
 .icon-bandcamp {
-  background-image: url("/images/icons/bandcamp.png");
+  background-image: url("/images/favicons/bandcamp-icon.png");
 }
 
 .icon-instagram {
-  background-image: url("/images/icons/instagram.png");
+  background-image: url("/images/favicons/instagram.png");
 }
 
 .icon-facebook {
-  background-image: url("/images/icons/facebook.png");
+  background-image: url("/images/favicons/facebook.png");
 }
 
 .icon-email {
-  background-image: url("/images/icons/email.png");
+  background-image: url("/images/favicons/email.png");
 }
-
