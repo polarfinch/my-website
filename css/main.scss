@@ -114,3 +114,11 @@ pre.highlight code,
     height: 50px;
   }
 }
+/* ---------------------------------------
+   Hide blog list / stray bottom line
+---------------------------------------- */
+
+.main-post-list,
+.post-list__divider {
+  display: none;
+}
