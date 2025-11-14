@@ -32,7 +32,7 @@ pre.highlight code,
 ---------------------------------------- */
 
 .user-image {
-  margin-bottom: 1.2em;
+  margin-bottom: 1.4em;
   position: relative;
   width: 100px;
   height: 100px;
@@ -41,150 +41,73 @@ pre.highlight code,
 }
 
 /* ---------------------------------------
-   SOCIAL NAV CIRCLES (background images)
+   NEW POLAR FINCH SOCIAL ROW
 ---------------------------------------- */
 
-/* Center the whole nav block (primary + social) */
-.navigation-wrapper {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.cover-navigation.navigation--social {
-  margin-top: 1rem;
-}
-
-/* Only target the social nav, not the main menu */
-.cover-navigation.navigation--social .navigation {
+.pf-social-row {
+  margin-top: 1.8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
-.cover-navigation.navigation--social .navigation__item {
-  margin: 0;
-  padding: 0;
-}
-
-/* Circular button */
-.cover-navigation.navigation--social .navigation__item a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+/* circular buttons */
+.pf-social-circle {
   width: 88px;
   height: 88px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.9);
-  background: transparent;
-
-  padding: 0;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  position: relative;
 }
 
-/* Hide text label visually but keep it for screen readers */
-.cover-navigation.navigation--social .navigation__item .label {
-  position: absolute;
-  left: -9999px;
-}
-
-/* Inner div that shows the icon */
-.cover-navigation.navigation--social .navigation__item a div {
-  width: 52px;
-  height: 52px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80%;
-}
-
-/* Icon images – using your /images/favicons files */
-.icon-spotify {
-  background-image: url("/images/favicons/spotify.png");
-  background-size: 78%;
-}
-
-.icon-apple-music {
-  background-image: url("/images/favicons/applemusic.png");
-  background-size: 95%;
-}
-
-.icon-bandcamp {
-  background-image: url("/images/favicons/bandcamp-icon.png");
-  background-size: 92%;
-}
-
-.icon-instagram {
-  background-image: url("/images/favicons/instagram.png");
-  background-size: 85%;
-}
-
-.icon-facebook {
-  background-image: url("/images/favicons/facebook.png");
-  background-size: 80%;
-}
-
-.icon-email {
-  background-image: url("/images/favicons/email.png");
-  background-size: 88%;
+/* icon images inside the circles */
+.pf-social-circle img {
+  display: block;
+  width: 52px !important;
+  height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  object-fit: contain;
 }
 
 /* ---------------------------------------
-   MOBILE LAYOUT + SOCIAL ICONS
-   (phones + small tablets)
+   MOBILE LAYOUT
 ---------------------------------------- */
-@media (max-width: 768px) {
-  /* stop vertical centering on mobile */
+
+@media (max-width: 480px) {
   .panel-main__inner {
-    display: block !important;
+    display: block;
   }
 
   .panel-main__content {
-    display: block !important;
-    padding: 1.5rem 1rem 3rem;  /* top / sides / bottom */
+    display: block;
+    padding: 1.5rem 1rem 3rem;
   }
 
-  /* more space under the profile photo */
   .user-image {
-    margin-bottom: 2.4em;
+    margin-bottom: 2.2em;
   }
 
-  /* push nav (menu + socials) down a bit */
-  .navigation-wrapper {
-    margin-top: 2.5rem !important;
+  .pf-social-row {
+    margin-top: 1.6rem;
+    gap: 18px;
   }
 
-  /* make sure social nav is visible */
-  .cover-navigation.navigation--social {
-    display: block !important;
-    margin-top: 1.5rem;
-  }
-
-  /* social nav layout on mobile */
-  .cover-navigation.navigation--social .navigation {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 18px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .cover-navigation.navigation--social .navigation__item a {
+  .pf-social-circle {
     width: 80px;
     height: 80px;
     border-width: 1.5px;
   }
 
-  .cover-navigation.navigation--social .navigation__item a div {
-    width: 48px;
-    height: 48px;
-    background-size: 85%;
+  .pf-social-circle img {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
   }
 }
 
@@ -201,37 +124,4 @@ pre.highlight code,
 
 .main-post-list > hr.post-list__divider {
   display: none;
-}
-
-/* ---------------------------------------
-   NEW POLAR FINCH SOCIAL ROW
-   (independent of theme nav)
----------------------------------------- */
-
-.pf-social-row {
-  margin-top: 1.5rem;   /* was 2rem */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-}
-
-@media (max-width: 480px) {
-  .pf-social-row {
-    margin-top: 1.5rem;  /* was 2.5rem */
-    gap: 18px;
-  }
-
-  .pf-social-circle {
-    width: 80px;
-    height: 80px;
-    border-width: 1.5px;
-  }
-
-  .pf-social-circle img {
-    width: 48px !important;
-    height: 48px !important;
-    max-width: 48px !important;
-    max-height: 48px !important;
-  }
 }
