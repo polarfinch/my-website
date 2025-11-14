@@ -71,180 +71,114 @@ body {
 
 
 /* =======================================================
-   ============  SOCIAL ICONS — FULL FIX   ===============
+   ============  SOCIAL ICONS — FINAL CLEAN   ============
    ======================================================= */
 
+/* Layout for the icon grid */
 .navigation {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;        /* space between circles */
+  gap: 22px;
   margin-top: 20px;
 }
 
-.navigation__item {
-  margin: 5px;
-}
-
-/* -- MAIN CIRCLE CONTAINER --------------------------- */
-.navigation__item a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 80px;
-  height: 80px;
-
-  border-radius: 50%;
-  border: 1px solid #ffffff;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-decoration: none;
-}
-
-/* -- INNER ICON CONTAINER ---------------------------- */
-.navigation__item a div {
-  width: 45px;
-  height: 45px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* ----------- ICON IMAGES ----------- */
-
-.icon-bandcamp    { background-image: url('/images/favicons/bandcamp-icon.png'); }
-.icon-spotify     { background-image: url('/images/favicons/spotify.png'); }
-.icon-apple-music { background-image: url('/images/favicons/applemusic.png'); }
-.icon-instagram   { background-image: url('/images/favicons/instagram.png'); }
-.icon-facebook    { background-image: url('/images/favicons/facebook.png'); }
-.icon-email       { background-image: url('/images/favicons/email.png'); }
-
-/* Hide fallback images */
-.navigation__item img {
-  display: none !important;
-}
-
-/* ----------- MOBILE FIXES ----------- */
-
-@media (max-width: 768px) {
-  .btn-mobile-menu {
-    display: none;
-  }
-
-  .navigation-wrapper {
-    display: none !important;
-  }
-}
-
-@media (max-width: 480px) {
-
-  /* Smaller circles */
-  .navigation__item a {
-    width: 70px;
-    height: 70px;
-  }
-
-  /* Smaller icons */
-  .navigation__item a div {
-    width: 35px;
-    height: 35px;
-  }
-
-  .navigation {
-    gap: 15px;
-  }
-}
-
-/* Center all icon rows perfectly */
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;  /* uniform spacing */
-  padding-top: 10px;
-}
-
-/* Circle containers */
-.navigation__item a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 90px;    /* bigger, cleaner */
-  height: 90px;
-  border-radius: 50%;
-
-  border: 2px solid rgba(255,255,255,0.8);
-  background: transparent;
-
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-}
-
-/* Icon inside circle — consistent ALWAYS */
-.navigation__item a div {
-  width: 42px;  
-  height: 42px;
-
-  background-size: contain !important;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Mobile refinement */
-@media (max-width: 480px) {
-  .navigation__item a {
-    width: 80px;
-    height: 80px;
-  }
-
-  .navigation__item a div {
-    width: 36px;
-    height: 36px;
-  }
-
-  .navigation {
-    gap: 18px;
-  }
-}
-
-/* Hide labels under icons */
-.navigation__item .label {
-  display: none !important;
-}
-
-/* Fix circle layout */
+/* Remove bullets / extra spacing */
 .navigation__item {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Hide text labels under icons */
+.navigation__item .label {
+  display: none !important;
+}
+
+/* Circle container */
 .navigation__item a {
   display: flex;
-  flex-direction: column; /* ensures icon stays centered */
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
-  width: 90px;   /* make circles slightly larger */
-  height: 90px;
+  width: 82px;
+  height: 82px;
+
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.8);
+  background: transparent;
+
+  margin: 10px;
+  padding: 0;
   text-decoration: none;
   overflow: hidden;
-  margin: 12px;
 }
 
-/* Icon inside circle */
+/* Inner icon box (same for all) */
 .navigation__item a div {
-  width: 48px;
-  height: 48px;
-  background-size: contain;
+  width: 40px;
+  height: 40px;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 70%;   /* base size */
 }
 
+/* --- Icon images + per-logo tweaks ------------------- */
+
+.icon-spotify {
+  background-image: url('/images/favicons/spotify.png');
+  background-size: 62%;   /* naturally bold → a bit smaller */
+}
+
+.icon-apple-music {
+  background-image: url('/images/favicons/applemusic.png');
+  background-size: 88%;   /* naturally thin → make bigger */
+  background-position-y: 52%;
+}
+
+.icon-bandcamp {
+  background-image: url('/images/favicons/bandcamp-icon.png');
+  background-size: 82%;   /* very wide logo */
+}
+
+.icon-instagram {
+  background-image: url('/images/favicons/instagram.png');
+  background-size: 76%;
+}
+
+.icon-facebook {
+  background-image: url('/images/favicons/facebook.png');
+  background-size: 74%;
+}
+
+.icon-email {
+  background-image: url('/images/favicons/email.png');
+  background-size: 76%;
+}
+
+/* Kill any fallback <img> inside the link */
+.navigation__item img {
+  display: none !important;
+}
+
+/* ----------- MOBILE ----------- */
+
+@media (max-width: 480px) {
+
+  .navigation {
+    gap: 16px;
+  }
+
+  .navigation__item a {
+    width: 74px;
+    height: 74px;
+    margin: 8px;
+  }
+
+  .navigation__item a div {
+    width: 34px;
+    height: 34px;
+    /* keep the same background-size percentages, just smaller box */
+  }
+}
