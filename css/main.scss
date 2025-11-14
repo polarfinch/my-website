@@ -168,3 +168,27 @@ pre.highlight code,
 .main-post-list > hr.post-list__divider {
   display: none;
 }
+
+/* =======================================
+   LAST-RESORT: FORCE SHOW SOCIAL ICONS
+   ======================================= */
+
+.cover-navigation.navigation--social .navigation__item a img.social-icon {
+  display: inline-block !important;
+  width: 54px !important;     /* desktop size */
+  height: 54px !important;
+  max-width: none !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  object-fit: contain;
+  border: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .cover-navigation.navigation--social .navigation__item a img.social-icon {
+    width: 50px !important;   /* mobile size */
+    height: 50px !important;
+  }
+}
