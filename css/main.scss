@@ -114,3 +114,10 @@ pre.highlight code,
     height: 50px;
   }
 }
+/* ---------------------------------------
+   Remove stray bottom divider line
+---------------------------------------- */
+
+.main-post-list > hr.post-list__divider {
+  display: none;
+}
