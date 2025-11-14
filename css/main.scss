@@ -163,3 +163,9 @@ pre.highlight code,
 .main-post-list > hr.post-list__divider {
   display: none;
 }
+
+/* DEBUG: make inner icon boxes visible */
+.cover-navigation.navigation--social .navigation__item a div {
+  background-color: red !important;
+  border: 1px solid yellow !important;
+}
