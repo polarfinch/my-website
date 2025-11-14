@@ -86,10 +86,57 @@ pre.highlight code,
   text-decoration: none;
 }
 
-/* The icon image inside each circle */
-.cover-navigation.navigation--social .navigation__item a img.social-icon {
-  display: block !important;
-  width: 54px;      /* icon size desktop */
+/* ---------------------------------------
+   SOCIAL NAV CIRCLES (using <img>)
+---------------------------------------- */
+
+/* Center the whole social nav block */
+.navigation-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cover-navigation.navigation--social {
+  margin-top: 1rem;
+}
+
+/* Only target the social nav, not the main menu */
+.cover-navigation.navigation--social .navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cover-navigation.navigation--social .navigation__item {
+  margin: 0;
+  padding: 0;
+}
+
+/* The circular button itself */
+.cover-navigation.navigation--social .navigation__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* 🔥 Icon sizing – works everywhere (desktop + mobile) */
+.social-icon {
+  display: inline-block !important;
+  width: 54px;
   height: 54px;
   object-fit: contain;
 }
@@ -97,7 +144,6 @@ pre.highlight code,
 /* ---------------------------------------
    MOBILE TWEAKS
 ---------------------------------------- */
-
 @media (max-width: 480px) {
   .cover-navigation.navigation--social .navigation {
     gap: 18px;
@@ -109,11 +155,12 @@ pre.highlight code,
     border-width: 1.5px;
   }
 
-  .cover-navigation.navigation--social .navigation__item a img.social-icon {
-    width: 50px;    /* icon size mobile */
+  .social-icon {
+    width: 50px;
     height: 50px;
   }
 }
+
 /* ---------------------------------------
    Remove stray bottom divider line
 ---------------------------------------- */
