@@ -211,3 +211,40 @@ body {
     gap: 18px;
   }
 }
+
+/* Hide labels under icons */
+.navigation__item .label {
+  display: none !important;
+}
+
+/* Fix circle layout */
+.navigation__item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__item a {
+  display: flex;
+  flex-direction: column; /* ensures icon stays centered */
+  align-items: center;
+  justify-content: center;
+
+  width: 90px;   /* make circles slightly larger */
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.7);
+  text-decoration: none;
+  overflow: hidden;
+  margin: 12px;
+}
+
+/* Icon inside circle */
+.navigation__item a div {
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
