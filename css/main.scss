@@ -40,7 +40,7 @@ pre.highlight code,
 }
 
 /* ---------------------------------------
-   SOCIAL NAV CIRCLES (using <img>)
+   SOCIAL NAV CIRCLES (background images)
 ---------------------------------------- */
 
 /* Center the whole social nav block */
@@ -69,7 +69,7 @@ pre.highlight code,
   padding: 0;
 }
 
-/* The circular button itself */
+/* Circular button */
 .cover-navigation.navigation--social .navigation__item a {
   display: flex;
   align-items: center;
@@ -78,72 +78,65 @@ pre.highlight code,
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.9);
   background: transparent;
 
   padding: 0;
   margin: 0;
   text-decoration: none;
+  position: relative;
 }
 
-/* ---------------------------------------
-   SOCIAL NAV CIRCLES (using <img>)
----------------------------------------- */
-
-/* Center the whole social nav block */
-.navigation-wrapper {
-  text-align: center;
-  margin-top: 2rem;
+/* Hide text label visually but keep for screen readers */
+.cover-navigation.navigation--social .navigation__item .label {
+  position: absolute;
+  left: -9999px;
 }
 
-.cover-navigation.navigation--social {
-  margin-top: 1rem;
+/* Inner div that shows the icon */
+.cover-navigation.navigation--social .navigation__item a div {
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
 }
 
-/* Only target the social nav, not the main menu */
-.cover-navigation.navigation--social .navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+/* Icon images – using your /images/favicons files */
+.icon-spotify {
+  background-image: url("{{ site.baseurl }}/images/favicons/spotify.png");
+  background-size: 78%;
 }
 
-.cover-navigation.navigation--social .navigation__item {
-  margin: 0;
-  padding: 0;
+.icon-apple-music {
+  background-image: url("{{ site.baseurl }}/images/favicons/applemusic.png");
+  background-size: 95%;
 }
 
-/* The circular button itself */
-.cover-navigation.navigation--social .navigation__item a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  background: transparent;
-
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
+.icon-bandcamp {
+  background-image: url("{{ site.baseurl }}/images/favicons/bandcamp-icon.png");
+  background-size: 92%;
 }
 
-/* 🔥 Icon sizing – works everywhere (desktop + mobile) */
-.social-icon {
-  display: inline-block !important;
-  width: 54px;
-  height: 54px;
-  object-fit: contain;
+.icon-instagram {
+  background-image: url("{{ site.baseurl }}/images/favicons/instagram.png");
+  background-size: 85%;
+}
+
+.icon-facebook {
+  background-image: url("{{ site.baseurl }}/images/favicons/facebook.png");
+  background-size: 80%;
+}
+
+.icon-email {
+  background-image: url("{{ site.baseurl }}/images/favicons/email.png");
+  background-size: 88%;
 }
 
 /* ---------------------------------------
    MOBILE TWEAKS
 ---------------------------------------- */
+
 @media (max-width: 480px) {
   .cover-navigation.navigation--social .navigation {
     gap: 18px;
@@ -155,9 +148,10 @@ pre.highlight code,
     border-width: 1.5px;
   }
 
-  .social-icon {
-    width: 50px;
-    height: 50px;
+  .cover-navigation.navigation--social .navigation__item a div {
+    width: 46px;
+    height: 46px;
+    background-size: 85%;
   }
 }
 
@@ -167,28 +161,4 @@ pre.highlight code,
 
 .main-post-list > hr.post-list__divider {
   display: none;
-}
-
-/* =======================================
-   LAST-RESORT: FORCE SHOW SOCIAL ICONS
-   ======================================= */
-
-.cover-navigation.navigation--social .navigation__item a img.social-icon {
-  display: inline-block !important;
-  width: 54px !important;     /* desktop size */
-  height: 54px !important;
-  max-width: none !important;
-  max-height: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  object-fit: contain;
-  border: 0;
-  padding: 0;
-}
-
-@media (max-width: 768px) {
-  .cover-navigation.navigation--social .navigation__item a img.social-icon {
-    width: 50px !important;   /* mobile size */
-    height: 50px !important;
-  }
 }
