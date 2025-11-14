@@ -209,42 +209,16 @@ pre.highlight code,
 ---------------------------------------- */
 
 .pf-social-row {
-  margin-top: 2rem;
+  margin-top: 1.5rem;   /* was 2rem */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
 }
 
-/* circular buttons */
-.pf-social-circle {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-/* icon images inside the circles */
-.pf-social-circle img {
-  display: block;
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-}
-
-/* hide the old theme social nav completely */
-.cover-navigation.navigation--social {
-  display: none !important;
-}
-
-/* mobile tweaks */
 @media (max-width: 480px) {
   .pf-social-row {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;  /* was 2.5rem */
     gap: 18px;
   }
 
@@ -255,8 +229,9 @@ pre.highlight code,
   }
 
   .pf-social-circle img {
-    width: 48px;
-    height: 48px;
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
   }
 }
-
