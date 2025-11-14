@@ -166,10 +166,9 @@ pre.highlight code,
     display: block !important;
   }
 
-  /* show social nav and push it down a bit */
+  /* just make sure it shows – let normal spacing handle position */
   .cover-navigation.navigation--social {
     display: block !important;
-    margin-top: 2.5rem !important;   /* move circles further below the profile pic */
   }
 
   /* flex layout for icons */
@@ -197,9 +196,4 @@ pre.highlight code,
     height: 80px !important;
     border-width: 1.5px !important;
   }
-}
-
-/* Hide the mobile burger menu icon */
-.btn-mobile-menu {
-  display: none !important;
 }
