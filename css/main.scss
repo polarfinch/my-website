@@ -6,7 +6,7 @@
 @import "monokai";
 
 /* ---------------------------------------
-   General small tweaks
+   Code highlight tweaks
 ---------------------------------------- */
 
 pre.highlight,
@@ -19,11 +19,18 @@ pre.highlight code,
   white-space: pre-wrap;
 }
 
+/* ---------------------------------------
+   Footer
+---------------------------------------- */
+
 .footer__copyright {
   margin: 0 20px 10px;
 }
 
-/* Avatar on the header */
+/* ---------------------------------------
+   Avatar image at top
+---------------------------------------- */
+
 .user-image {
   margin-bottom: 1.2em;
   position: relative;
@@ -34,10 +41,10 @@ pre.highlight code,
 }
 
 /* ---------------------------------------
-   Social navigation circles
+   SOCIAL NAV CIRCLES
 ---------------------------------------- */
 
-/* Wrap nav nicely and center it */
+/* Center the whole social nav block */
 .navigation-wrapper {
   text-align: center;
   margin-top: 2rem;
@@ -47,6 +54,7 @@ pre.highlight code,
   margin-top: 1rem;
 }
 
+/* Flex layout for the circles */
 .navigation {
   display: flex;
   flex-wrap: wrap;
@@ -57,13 +65,12 @@ pre.highlight code,
   list-style: none;
 }
 
-/* Each list item (circle) */
 .navigation__item {
   margin: 0;
   padding: 0;
 }
 
-/* The circular link itself */
+/* The circular button itself */
 .navigation__item a {
   display: flex;
   align-items: center;
@@ -80,42 +87,42 @@ pre.highlight code,
   text-decoration: none;
 }
 
-/* Icon inside each circle */
+/* The icon box inside each circle – BIGGER NOW */
 .navigation__item a div {
-  width: 40px;
-  height: 40px;
+  width: 50px;          /* bigger than before */
+  height: 50px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: 80%; /* global default size */
 }
 
-/* Per-logo optical tweaks (so they feel similar in size) */
+/* Per-logo optical tweaks so they feel similar in size */
 .icon-spotify {
-  background-size: 65%;
-}
-
-.icon-apple-music {
-  background-size: 80%;
-}
-
-.icon-bandcamp {
   background-size: 78%;
 }
 
+.icon-apple-music {
+  background-size: 95%;  /* thin wordmark → boost */
+}
+
+.icon-bandcamp {
+  background-size: 92%;
+}
+
 .icon-instagram {
-  background-size: 75%;
+  background-size: 85%;
 }
 
 .icon-facebook {
-  background-size: 70%;
+  background-size: 80%;
 }
 
 .icon-email {
-  background-size: 70%;
+  background-size: 88%;
 }
 
 /* ---------------------------------------
-   Mobile adjustments
+   MOBILE TWEAKS
 ---------------------------------------- */
 
 @media (max-width: 480px) {
@@ -130,7 +137,8 @@ pre.highlight code,
   }
 
   .navigation__item a div {
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
+    background-size: 85%;
   }
 }
