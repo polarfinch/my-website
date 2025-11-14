@@ -197,3 +197,20 @@ pre.highlight code,
     border-width: 1.5px !important;
   }
 }
+
+/* ---------------------------------------
+   MOBILE SPACING FIXES
+---------------------------------------- */
+
+@media (max-width: 480px) {
+  /* more breathing room under the profile photo */
+  .user-image {
+    margin-bottom: 2.8em;
+  }
+
+  /* push the whole nav block further down */
+  .navigation-wrapper {
+    margin-top: 3rem !important;
+  }
+}
+
